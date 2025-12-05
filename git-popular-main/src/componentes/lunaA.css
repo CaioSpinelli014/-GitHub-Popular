@@ -1,0 +1,186 @@
+/* Variáveis de Cores e Estilos */
+:root {
+  --azul-escuro: #19304F;
+  --cinza-texto: #222222;
+  --fundo-branco: #FFFFFF;
+  --fonte-principal: 'Roboto', sans-serif;
+  --transicao-suave: all 0.3s ease;
+}
+
+/* ---------------------------------------------------- */
+/* LAYOUT PRINCIPAL */
+/* ---------------------------------------------------- */
+
+.main {
+    /* Garante que o fundo da página (se não for branco) não interfira */
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.curriculoContainer {
+  /* Contêiner principal: duas colunas */
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 90vh;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: var(--fonte-principal);
+  background-color: var(--fundo-branco);
+}
+
+.mainContent {
+  /* Coluna da esquerda (Perfil, Objetivo, Experiência, Educação) */
+  flex: 2;
+  padding: 40px 30px;
+  color: var(--cinza-texto);
+  text-align: left;
+}
+
+/* Barra Lateral */
+.sidebar {
+  /* Coluna da direita (Contato, Habilidades) */
+  flex: 1;
+  background-color: var(--azul-escuro);
+  color: var(--fundo-branco);
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------- */
+/* TÍTULOS E TEXTOS */
+/* ---------------------------------------------------- */
+
+.profileInfoTitle {
+    /* Nome Completo */
+    font-size: 28px;
+    color: var(--azul-escuro);
+    margin: 0;
+}
+
+.profileInfoSubtitle {
+    /* Cargos ou Foco */
+    font-size: 16px;
+    color: #555;
+    margin: 4px 0 0 0;
+}
+
+.title2 {
+  /* Títulos de Seção (Objetivo, Experiência, Formação) */
+  font-size: 20px;
+  color: var(--azul-escuro);
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--azul-escuro);
+}
+
+.title3 {
+    /* Títulos de Subseção (Nome do Curso, Cargo) */
+    font-size: 16px;
+    color: var(--azul-escuro);
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Títulos dentro da barra lateral devem ser brancos */
+.sidebarTitle {
+    text-align: center;
+    color: var(--fundo-branco);
+    font-size: 18px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--fundo-branco);
+}
+
+/* Parágrafos de Introdução/Objetivo */
+.profileText {
+    line-height: 1.6;
+    margin-top: 15px;
+    font-style: italic;
+    text-align: justify;
+}
+
+/* Parágrafos gerais e itens de lista */
+.text,
+.listItem {
+    line-height: 1.6;
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+.list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.sidebarText {
+    color: var(--fundo-branco);
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Habilidades (Lista sem marcadores) */
+.skillsList {
+    list-style: none; 
+    padding: 0;
+    margin-top: 10px;
+}
+
+.skillItem {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo suave para os itens */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* ---------------------------------------------------- */
+/* IMAGEM E HEADER */
+/* ---------------------------------------------------- */
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profilePhoto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--azul-escuro);
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .curriculoContainer {
+    flex-direction: column;
+    box-shadow: none;
+  }
+  
+  .mainContent {
+    padding: 20px;
+  }
+  
+  .sidebar {
+    order: -1; /* Move a barra lateral para o topo em telas pequenas */
+    padding: 20px;
+  }
+  
+  .profileHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .profileInfoSubtitle {
+    text-align: center;
+  }
+}

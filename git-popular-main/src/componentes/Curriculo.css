@@ -1,0 +1,178 @@
+/* Variáveis de Cores e Estilos */
+:root {
+  --azul-escuro: #19304F;
+  --cinza-texto: #555555;
+  --fundo-branco: #FFFFFF;
+  --azul-claro-hover: #4d698e;
+  --fonte-principal: 'Roboto', sans-serif;
+  --transicao-suave: all 0.3s ease;
+}
+
+/* Layout Principal e Contêiner */
+.curriculoContainer {
+  /* Layout de duas colunas usando Flexbox */
+  display:block;
+  flex-direction: row;
+  max-width: 900px;
+  margin: 20px auto;
+  min-height: 80vh;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: var(--fonte-principal);
+  background-color: var(--fundo-branco);
+}
+
+.main-content {
+  /* Coluna principal para o perfil, experiência e educação */
+  flex: 2;
+  padding: 40px 30px;
+  color: var(--cinza-texto);
+  text-align: left;
+}
+
+/* Barra Lateral */
+.barra-lateral {
+  /* Coluna da barra lateral para contato e habilidades */
+  flex: 1;
+  background-color: var(--azul-escuro);
+  color: var(--fundo-branco);
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------- */
+/* TÍTULOS E TEXTOS */
+/* ---------------------------------------------------- */
+
+.titulo1 {
+  /* Nome Completo */
+  font-size: 28px;
+  color: var(--azul-escuro);
+  margin: 0 0 5px 0;
+}
+
+.titulo2 {
+  /* Títulos de Seção (Experiência, Educação, etc.) */
+  font-size: 20px;
+  color: var(--azul-escuro);
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--azul-escuro);
+}
+
+/* Títulos menores (E-mail, Telefone na sidebar) */
+.titulo3 {
+  font-size: 16px;
+  color: var(--azul-escuro); /* Mantenha escuro se for no main-content */
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* Ajuste de cor para títulos na barra lateral */
+.barra-lateral .titulo2,
+.barra-lateral .titulo3 {
+  color: var(--fundo-branco);
+  border-bottom: 1px solid var(--fundo-branco);
+}
+
+.paragrafoLi,
+.perfil-text {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ---------------------------------------------------- */
+/* PERFIL E IMAGEM */
+/* ---------------------------------------------------- */
+
+.perfil-header {
+  display: block;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.perfil-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--azul-escuro);
+}
+
+.perfil-text {
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* ---------------------------------------------------- */
+/* LISTAS E HABILIDADES */
+/* ---------------------------------------------------- */
+
+.formatUl {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.habilidades .formatUl {
+    list-style: none; /* Remove bullet points na lista de habilidades */
+    padding: 0;
+}
+
+/* Estilos para os ícones sociais */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  /* Inverte a cor do ícone SVG para branco, já que o fundo é azul */
+  filter: invert(100%); 
+  transition: var(--transicao-suave);
+}
+
+.social-icons a:hover img {
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .curriculoContainer {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .main-content, .barra-lateral {
+    padding: 20px;
+  }
+  
+  .barra-lateral {
+    order: -1; /* Move a barra lateral para cima em dispositivos móveis */
+    text-align: center;
+  }
+  
+  .perfil-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .perfil-info {
+    margin-top: 10px;
+  }
+  
+  .habilidades .formatUl {
+    text-align: left;
+    padding-left: 0;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}

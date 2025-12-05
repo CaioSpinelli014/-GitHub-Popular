@@ -1,0 +1,136 @@
+:root {
+  --azul: #19304F;
+  --branco: #FFFFFF;
+  --preto: #222222;
+  --fonte: 'Roboto', sans-serif;
+  --transicao: all 0.5s ease;
+}
+
+/* Layout principal */
+.main {
+  padding: 0;
+  margin: auto;
+  font-family: var(--fonte);
+  background-color: var(--branco);
+  color: var(--preto);
+  transition: var(--transicao);
+}
+
+.curriculoContainer {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: var(--transicao);
+}
+
+.mainContent {
+  flex: 2;
+  padding: 40px;
+  text-align: left;
+  transition: var(--transicao);
+}
+
+/* Barra lateral */
+.sidebar {
+  flex: 1;
+  background-color: var(--azul);
+  color: var(--branco);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; (Removido para permitir que os blocos fluam normalmente) */
+  transition: var(--transicao);
+}
+
+.profile {
+  margin-bottom: 36px;
+}
+
+/* Títulos */
+.title2 {
+  color: var(--azul);
+  font-size: 20px;
+  margin-top: 36px;
+}
+
+.title3 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Conteúdo */
+.text,
+.listItem {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Barra lateral específica */
+.sidebarTitle {
+  text-align: center;
+  color: var(--branco);
+  font-size: 18px;
+  border-bottom: 1px solid var(--branco);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebarText {
+  text-align:left;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* Habilidades */
+.skillsList {
+  list-style: none;
+  padding: 0;
+}
+
+.skillItem {
+  border: 1px solid var(--branco);
+  padding: 5px;
+  margin-bottom: 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .curriculoContainer {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    order: -1;
+    text-align: center;
+  }
+
+  .skillItem {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+
+/* Perfil principal */
+.profileInfoTitle {
+  margin: 0px;
+  font-size: 24px;
+  color: var(--azul);
+}
+
+.profileInfoSubtitle {
+  margin-top: 4px;
+  font-size: 16px;
+  color: #555;
+}
